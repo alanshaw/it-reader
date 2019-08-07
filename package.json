@@ -1,6 +1,6 @@
 {
   "name": "it-reader",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Read an exact number of bytes from a binary (async) iterable",
   "main": "index.js",
   "scripts": {
