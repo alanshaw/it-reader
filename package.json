@@ -19,7 +19,7 @@
     "compileEnhancements": false
   },
   "dependencies": {
-    "bl": "^3.0.0"
+    "bl": "^4.0.0"
   },
   "repository": {
     "type": "git",
