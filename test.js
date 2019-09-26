@@ -1,6 +1,6 @@
 const test = require('ava')
 const Crypto = require('crypto')
-const BufferList = require('bl')
+const BufferList = require('bl/BufferList')
 const Reader = require('.')
 
 test('should read from source with too big first chunk', async t => {
