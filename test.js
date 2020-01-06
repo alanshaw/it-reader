@@ -136,9 +136,8 @@ test('should read bytes twice with too big first chunk and too big second chunk'
 test('should read from source and consume rest', async t => {
   const input = [Crypto.randomBytes(32), Crypto.randomBytes(3), Crypto.randomBytes(6)]
   const reader = Reader(input)
-  let res
+  const res = await reader.next(8)
 
-  res = await reader.next(8)
   t.false(res.done)
   t.deepEqual(new BufferList(input).slice(0, 8), res.value.slice())
 
@@ -155,4 +154,12 @@ test('should throw when source ends before read completes', async t => {
   const reader = Reader(input)
   const err = await t.throwsAsync(reader.next(8))
   t.is(err.code, 'ERR_UNDER_READ')
+})
+
+test('should expose bytes read so far for under read', async t => {
+  const input = [Crypto.randomBytes(4)]
+  const reader = Reader(input)
+  const err = await t.throwsAsync(reader.next(8))
+  t.is(err.code, 'ERR_UNDER_READ')
+  t.deepEqual(err.buffer.slice(), input[0].slice(0, 4))
 })

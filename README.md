@@ -56,7 +56,7 @@ The iterator's `next` method takes an _optional_ parameter - the number of bytes
 
 If the number of bytes to read are not specified, the iterator will yield any bytes remaining in the internal buffer or the next available chunk.
 
-If the number of bytes to read exceeds the number of bytes available in the source the iterator will throw and error with a `code` property set to `'ERR_UNDER_READ'`.
+If the number of bytes to read exceeds the number of bytes available in the source the iterator will throw and error with a `code` property set to `'ERR_UNDER_READ'` and a `buffer` property (the bytes read so far, if any), which is a [`BufferList`](https://npm.im/bl) instance.
 
 ## Contribute
 

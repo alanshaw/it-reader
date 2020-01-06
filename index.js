@@ -35,7 +35,7 @@ module.exports = source => {
     if (bytes) {
       throw Object.assign(
         new Error(`stream ended before ${bytes} bytes became available`),
-        { code: 'ERR_UNDER_READ' }
+        { code: 'ERR_UNDER_READ', buffer: bl }
       )
     }
   })()
