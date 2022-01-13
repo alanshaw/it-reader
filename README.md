@@ -37,7 +37,7 @@ for await (const chunk of stream) {
 ## API
 
 ```js
-import reader from 'it-reader'
+import { reader } from 'it-reader'
 ```
 
 ### `reader(source)`
