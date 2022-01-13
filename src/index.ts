@@ -1,8 +1,12 @@
 import BufferList from 'bl/BufferList.js'
 import type { Source } from 'it-stream-types'
 
+export interface Reader extends AsyncGenerator<BufferList, void, any> {
+  next: (...args: [] | [number]) => Promise<IteratorResult<BufferList, void>>
+}
+
 export function reader (source: Source<Uint8Array>) {
-  const reader = (async function * (): AsyncGenerator<BufferList, void, any> {
+  const reader: Reader = (async function * (): AsyncGenerator<BufferList, void, any> {
     // @ts-expect-error first yield in stream is ignored
     let bytes: number | undefined = yield // Allows us to receive 8 when reader.next(8) is called
     let bl = new BufferList()
