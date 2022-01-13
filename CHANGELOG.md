@@ -1,3 +1,10 @@
+### [4.0.1](https://github.com/alanshaw/it-reader/compare/v4.0.0...v4.0.1) (2022-01-13)
+
+
+### Bug Fixes
+
+* export reader type ([#8](https://github.com/alanshaw/it-reader/issues/8)) ([18f537e](https://github.com/alanshaw/it-reader/commit/18f537ee03ce73f3fd953be51b7f67448a45665c))
+
 ## [4.0.0](https://github.com/alanshaw/it-reader/compare/v3.0.0...v4.0.0) (2022-01-13)
 
 
