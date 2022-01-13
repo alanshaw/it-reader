@@ -1,7 +1,7 @@
 # it-reader
 
-[![Build Status](https://travis-ci.org/alanshaw/it-reader.svg?branch=master)](https://travis-ci.org/alanshaw/it-reader)
-[![dependencies Status](https://status.david-dm.org/gh/alanshaw/it-reader.svg)](https://david-dm.org/alanshaw/it-reader)
+[![Build Status](https://github.com/alanshaw/it-reader/actions/workflows/js-test-and-release.yml/badge.svg?branch=master)](https://github.com/alanshaw/it-reader/actions/workflows/js-test-and-release.yml)
+[![Dependencies Status](https://david-dm.org/alanshaw/it-reader/status.svg)](https://david-dm.org/alanshaw/it-reader)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > Read an exact number of bytes from a binary (async) iterable
@@ -15,21 +15,21 @@ npm install it-reader
 ## Usage
 
 ```js
-const Reader = require('it-reader')
+import { reader } from 'it-reader'
 
-const reader = Reader(source) // source is any iterable or async iterable
-const { value, done } = await reader.next(8)
+const stream = reader(source) // source is any iterable or async iterable
+const { value, done } = await stream.next(8)
 
 // NOTE: value is a BufferList (https://npm.im/bl)
 console.log(value.toString())
 
 // Now read 16 more bytes:
-await reader.next(16)
+await stream.next(16)
 
 // or...
 // Consume the rest of the stream
 
-for await (const chunk of reader) {
+for await (const chunk of stream) {
   console.log(chunk.toString())
 }
 ```
@@ -37,10 +37,10 @@ for await (const chunk of reader) {
 ## API
 
 ```js
-const Reader = require('it-reader')
+import reader from 'it-reader'
 ```
 
-### `Reader(source)`
+### `reader(source)`
 
 Create and return a new reader.
 
