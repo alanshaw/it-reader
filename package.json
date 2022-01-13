@@ -1,6 +1,6 @@
 {
   "name": "it-reader",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Read an exact number of bytes from a binary (async) iterable",
   "type": "module",
   "types": "./dist/src/index.d.ts",

@@ -1,3 +1,10 @@
+### [4.0.2](https://github.com/alanshaw/it-reader/compare/v4.0.1...v4.0.2) (2022-01-13)
+
+
+### Trivial Changes
+
+* update readme ([#9](https://github.com/alanshaw/it-reader/issues/9)) ([08d4134](https://github.com/alanshaw/it-reader/commit/08d4134303bd9121d1a113baf02f33b447496d5d))
+
 ### [4.0.1](https://github.com/alanshaw/it-reader/compare/v4.0.0...v4.0.1) (2022-01-13)
 
 
