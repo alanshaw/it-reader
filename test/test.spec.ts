@@ -1,5 +1,5 @@
 import { expect } from 'aegir/utils/chai.js'
-import BufferList from 'bl/BufferList.js'
+import { Uint8ArrayList } from 'uint8arraylist'
 import { reader } from '../src/index.js'
 import randomBytes from 'iso-random-stream/src/random.js'
 
@@ -48,7 +48,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(0, 8)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(0, 8)).to.deep.equal(res.value.slice())
 
     res = await stream.next()
     expect(res.done).to.be.false()
@@ -57,7 +57,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(8)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(8)).to.deep.equal(res.value.slice())
 
     res = await stream.next()
     expect(res.done).to.be.true()
@@ -76,7 +76,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(0, 8)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(0, 8)).to.deep.equal(res.value.slice())
 
     res = await stream.next()
     expect(res.done).to.be.true()
@@ -95,7 +95,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(0, 8)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(0, 8)).to.deep.equal(res.value.slice())
 
     res = await stream.next(8)
     expect(res.done).to.be.false()
@@ -104,7 +104,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(8, 16)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(8, 16)).to.deep.equal(res.value.slice())
 
     res = await stream.next()
     expect(res.done).to.be.true()
@@ -123,7 +123,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(0, 8)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(0, 8)).to.deep.equal(res.value.slice())
 
     res = await stream.next(8)
     expect(res.done).to.be.false()
@@ -132,7 +132,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(8, 16)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(8, 16)).to.deep.equal(res.value.slice())
 
     res = await stream.next()
     expect(res.done).to.be.true()
@@ -151,7 +151,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(0, 8)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(0, 8)).to.deep.equal(res.value.slice())
 
     res = await stream.next(8)
     expect(res.done).to.be.false()
@@ -160,7 +160,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(8, 16)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(8, 16)).to.deep.equal(res.value.slice())
 
     res = await stream.next()
     expect(res.done).to.be.true()
@@ -179,7 +179,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(0, 8)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(0, 8)).to.deep.equal(res.value.slice())
 
     res = await stream.next(8)
     expect(res.done).to.be.false()
@@ -188,7 +188,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(8, 16)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(8, 16)).to.deep.equal(res.value.slice())
 
     res = await stream.next()
     expect(res.done).to.be.false()
@@ -197,7 +197,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(16)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(16)).to.deep.equal(res.value.slice())
 
     res = await stream.next()
     expect(res.done).to.be.true()
@@ -215,7 +215,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(0, 8)).to.deep.equal(res.value.slice())
+    expect(new Uint8ArrayList(...input).slice(0, 8)).to.deep.equal(res.value.slice())
 
     const output = []
     for await (const chunk of stream) {
@@ -226,7 +226,7 @@ describe('it-reader', () => {
       throw new Error('Value was not ok')
     }
 
-    expect(new BufferList(input).slice(8)).to.deep.equal(new BufferList(output).slice())
+    expect(new Uint8ArrayList(...input).slice(8)).to.deep.equal(new Uint8ArrayList(...output).slice())
   })
 
   it('should throw when source ends before read completes', async () => {
@@ -242,6 +242,6 @@ describe('it-reader', () => {
     const stream = reader(input)
 
     await expect(stream.next(8))
-      .to.eventually.be.rejected.with.property('buffer').that.deep.equals(new BufferList(input[0].slice(0, 4)))
+      .to.eventually.be.rejected.with.property('buffer').that.deep.equals(new Uint8ArrayList(input[0].slice(0, 4)))
   })
 })

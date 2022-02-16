@@ -1,29 +1,28 @@
-import BufferList from 'bl/BufferList.js'
+import { Uint8ArrayList } from 'uint8arraylist'
 import type { Source } from 'it-stream-types'
 
-export interface Reader extends AsyncGenerator<BufferList, void, any> {
-  next: (...args: [] | [number]) => Promise<IteratorResult<BufferList, void>>
+export interface Reader extends AsyncGenerator<Uint8ArrayList, void, any> {
+  next: (...args: [] | [number]) => Promise<IteratorResult<Uint8ArrayList, void>>
 }
 
 export function reader (source: Source<Uint8Array>) {
-  const reader: Reader = (async function * (): AsyncGenerator<BufferList, void, any> {
+  const reader: Reader = (async function * (): AsyncGenerator<Uint8ArrayList, void, any> {
     // @ts-expect-error first yield in stream is ignored
     let bytes: number | undefined = yield // Allows us to receive 8 when reader.next(8) is called
-    let bl = new BufferList()
+    let bl = new Uint8ArrayList()
 
     for await (const chunk of source) {
       if (bytes == null) {
-        // @ts-expect-error bl types are broken
-        bytes = yield bl.append(chunk)
-        bl = new BufferList()
+        bl.append(chunk)
+        bytes = yield bl
+        bl = new Uint8ArrayList()
         continue
       }
 
-      // @ts-expect-error bl types are broken
       bl.append(chunk)
 
       while (bl.length >= bytes) {
-        const data = bl.shallowSlice(0, bytes)
+        const data = bl.subarray(0, bytes)
         bl.consume(bytes)
         bytes = yield data
 
@@ -31,7 +30,7 @@ export function reader (source: Source<Uint8Array>) {
         if (bytes == null) {
           if (bl.length > 0) {
             bytes = yield bl
-            bl = new BufferList()
+            bl = new Uint8ArrayList()
           }
           break // bytes is null and/or no more buffer to yield
         }
