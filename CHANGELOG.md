@@ -1,3 +1,14 @@
+## [5.0.0](https://github.com/alanshaw/it-reader/compare/v4.0.2...v5.0.0) (2022-02-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* where `BufferList`s were returned, now `Uint8ArrayList`s are
+
+### Bug Fixes
+
+* swap bl for uint8arraylist ([#11](https://github.com/alanshaw/it-reader/issues/11)) ([f1b4d33](https://github.com/alanshaw/it-reader/commit/f1b4d3346c50c84b747ba4286d3446114c52abad))
+
 ### [4.0.2](https://github.com/alanshaw/it-reader/compare/v4.0.1...v4.0.2) (2022-01-13)
 
 
