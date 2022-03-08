@@ -2,7 +2,7 @@ import { Uint8ArrayList } from 'uint8arraylist'
 import type { Source } from 'it-stream-types'
 
 export interface Reader extends AsyncGenerator<Uint8ArrayList, void, any> {
-  next: (...args: [] | [number]) => Promise<IteratorResult<Uint8ArrayList, void>>
+  next: (...args: [] | [number | undefined]) => Promise<IteratorResult<Uint8ArrayList, void>>
 }
 
 export function reader (source: Source<Uint8Array>) {
