@@ -1,3 +1,10 @@
+### [5.0.1](https://github.com/alanshaw/it-reader/compare/v5.0.0...v5.0.1) (2022-03-08)
+
+
+### Bug Fixes
+
+* allow passing undefined to reader next method ([#14](https://github.com/alanshaw/it-reader/issues/14)) ([9944de0](https://github.com/alanshaw/it-reader/commit/9944de07a792686e53d95965b98f129c61b5323f))
+
 ## [5.0.0](https://github.com/alanshaw/it-reader/compare/v4.0.2...v5.0.0) (2022-02-16)
 
 
