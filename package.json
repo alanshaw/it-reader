@@ -119,7 +119,7 @@
   "author": "Alan Shaw",
   "license": "MIT",
   "devDependencies": {
-    "aegir": "^36.1.3",
+    "aegir": "^37.4.5",
     "iso-random-stream": "^2.0.2"
   },
   "dependencies": {
