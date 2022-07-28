@@ -1,3 +1,14 @@
+## [6.0.0](https://github.com/alanshaw/it-reader/compare/v5.0.2...v6.0.0) (2022-07-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* exported uint8arraylist type is now 2.x
+
+### Dependencies
+
+* update uint8arraylist to 2.x ([#34](https://github.com/alanshaw/it-reader/issues/34)) ([f0d261e](https://github.com/alanshaw/it-reader/commit/f0d261e5272987ca3c3d0b036ec5e05c814f138a))
+
 ## [5.0.2](https://github.com/alanshaw/it-reader/compare/v5.0.1...v5.0.2) (2022-07-28)
 
 

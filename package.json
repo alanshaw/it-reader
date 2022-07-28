@@ -1,6 +1,6 @@
 {
   "name": "it-reader",
-  "version": "5.0.2",
+  "version": "6.0.0",
   "description": "Read an exact number of bytes from a binary (async) iterable",
   "author": "Alan Shaw",
   "license": "Apache-2.0 OR MIT",
