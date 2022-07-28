@@ -22,7 +22,7 @@ export function reader (source: Source<Uint8Array>) {
       bl.append(chunk)
 
       while (bl.length >= bytes) {
-        const data = bl.subarray(0, bytes)
+        const data = bl.sublist(0, bytes)
         bl.consume(bytes)
         bytes = yield data
 
