@@ -1,4 +1,4 @@
-import { expect } from 'aegir/utils/chai.js'
+import { expect } from 'aegir/chai'
 import { Uint8ArrayList } from 'uint8arraylist'
 import { reader } from '../src/index.js'
 import randomBytes from 'iso-random-stream/src/random.js'
