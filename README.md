@@ -1,15 +1,26 @@
-# it-reader
+# it-reader <!-- omit in toc -->
 
-[![Build Status](https://github.com/alanshaw/it-reader/actions/workflows/js-test-and-release.yml/badge.svg?branch=master)](https://github.com/alanshaw/it-reader/actions/workflows/js-test-and-release.yml)
-[![Dependencies Status](https://david-dm.org/alanshaw/it-reader/status.svg)](https://david-dm.org/alanshaw/it-reader)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![codecov](https://img.shields.io/codecov/c/github/alanshaw/it-reader.svg?style=flat-square)](https://codecov.io/gh/alanshaw/it-reader)
+[![CI](https://img.shields.io/github/workflow/status/alanshaw/it-reader/test%20&%20maybe%20release/master?style=flat-square)](https://github.com/alanshaw/it-reader/actions/workflows/js-test-and-release.yml)
 
 > Read an exact number of bytes from a binary (async) iterable
 
+## Table of contents <!-- omit in toc -->
+
+- [Install](#install)
+- [Usage](#usage)
+- [API](#api)
+  - [`reader(source)`](#readersource)
+    - [Parameters](#parameters)
+    - [Returns](#returns)
+- [Contribute](#contribute)
+- [License](#license)
+- [Contribution](#contribution)
+
 ## Install
 
-```sh
-npm install it-reader
+```console
+$ npm i it-reader
 ```
 
 ## Usage
@@ -46,13 +57,13 @@ Create and return a new reader.
 
 #### Parameters
 
-* `source` (`Iterable`) - An [iterable or async iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) that yields [`Buffer`](https://npm.im/buffer) or [`BufferList`](https://npm.im/bl) objects.
+- `source` (`Iterable`) - An [iterable or async iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) that yields [`Buffer`](https://npm.im/buffer) or [`BufferList`](https://npm.im/bl) objects.
 
 #### Returns
 
 An [async iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol) that yields [`BufferList`](https://npm.im/bl) objects.
 
-The iterator's `next` method takes an _optional_ parameter - the number of bytes to read from the `source`.
+The iterator's `next` method takes an *optional* parameter - the number of bytes to read from the `source`.
 
 If the number of bytes to read are not specified, the iterator will yield any bytes remaining in the internal buffer or the next available chunk.
 
@@ -64,4 +75,11 @@ Feel free to dive in! [Open an issue](https://github.com/alanshaw/it-reader/issu
 
 ## License
 
-[MIT](LICENSE) © Alan Shaw
+Licensed under either of
+
+- Apache 2.0, ([LICENSE-APACHE](LICENSE-APACHE) / <http://www.apache.org/licenses/LICENSE-2.0>)
+- MIT ([LICENSE-MIT](LICENSE-MIT) / <http://opensource.org/licenses/MIT>)
+
+## Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.

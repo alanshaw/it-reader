@@ -2,6 +2,30 @@
   "name": "it-reader",
   "version": "5.0.1",
   "description": "Read an exact number of bytes from a binary (async) iterable",
+  "author": "Alan Shaw",
+  "license": "Apache-2.0 OR MIT",
+  "homepage": "https://github.com/alanshaw/it-reader#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanshaw/it-reader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alanshaw/it-reader/issues"
+  },
+  "keywords": [
+    "async",
+    "binary",
+    "buffer",
+    "it",
+    "iterable",
+    "iterator",
+    "read",
+    "stream"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
   "type": "module",
   "types": "./dist/src/index.d.ts",
   "files": [
@@ -12,6 +36,7 @@
   ],
   "exports": {
     ".": {
+      "types": "./dist/src/index.d.ts",
       "import": "./dist/src/index.js"
     }
   },
@@ -48,15 +73,15 @@
               "release": "patch"
             },
             {
-              "type": "chore",
-              "release": "patch"
-            },
-            {
               "type": "docs",
               "release": "patch"
             },
             {
               "type": "test",
+              "release": "patch"
+            },
+            {
+              "type": "deps",
               "release": "patch"
             },
             {
@@ -86,7 +111,11 @@
               },
               {
                 "type": "docs",
-                "section": "Trivial Changes"
+                "section": "Documentation"
+              },
+              {
+                "type": "deps",
+                "section": "Dependencies"
               },
               {
                 "type": "test",
@@ -103,45 +132,25 @@
     ]
   },
   "scripts": {
+    "clean": "aegir clean",
     "lint": "aegir lint",
-    "dep-check": "aegir dep-check dist/src/**/*.js dist/test/**/*.js",
-    "build": "tsc",
-    "pretest": "npm run build",
-    "test": "aegir test -f ./dist/test",
-    "test:chrome": "npm run test -- -t browser --cov",
-    "test:chrome-webworker": "npm run test -- -t webworker",
-    "test:firefox": "npm run test -- -t browser -- --browser firefox",
-    "test:firefox-webworker": "npm run test -- -t webworker -- --browser firefox",
-    "test:node": "npm run test -- -t node --cov",
-    "test:electron-main": "npm run test -- -t electron-main",
-    "release": "semantic-release"
-  },
-  "author": "Alan Shaw",
-  "license": "MIT",
-  "devDependencies": {
-    "aegir": "^36.1.3",
-    "iso-random-stream": "^2.0.2"
+    "dep-check": "aegir dep-check",
+    "build": "aegir build",
+    "test": "aegir test",
+    "test:chrome": "aegir test -t browser --cov",
+    "test:chrome-webworker": "aegir test -t webworker",
+    "test:firefox": "aegir test -t browser -- --browser firefox",
+    "test:firefox-webworker": "aegir test -t webworker -- --browser firefox",
+    "test:node": "aegir test -t node --cov",
+    "test:electron-main": "aegir test -t electron-main",
+    "release": "aegir release"
   },
   "dependencies": {
-    "uint8arraylist": "^1.2.0",
-    "it-stream-types": "^1.0.4"
+    "it-stream-types": "^1.0.4",
+    "uint8arraylist": "^1.2.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alanshaw/it-reader.git"
-  },
-  "keywords": [
-    "it",
-    "iterable",
-    "iterator",
-    "async",
-    "read",
-    "binary",
-    "stream",
-    "buffer"
-  ],
-  "bugs": {
-    "url": "https://github.com/alanshaw/it-reader/issues"
-  },
-  "homepage": "https://github.com/alanshaw/it-reader#readme"
+  "devDependencies": {
+    "aegir": "^37.4.7",
+    "iso-random-stream": "^2.0.2"
+  }
 }
