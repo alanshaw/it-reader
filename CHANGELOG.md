@@ -1,3 +1,10 @@
+## [5.0.2](https://github.com/alanshaw/it-reader/compare/v5.0.1...v5.0.2) (2022-07-28)
+
+
+### Dependencies
+
+* **dev:** update aegir to 37.x ([#32](https://github.com/alanshaw/it-reader/issues/32)) ([010c6c6](https://github.com/alanshaw/it-reader/commit/010c6c698186436f79d025c5156197e93f804806))
+
 ### [5.0.1](https://github.com/alanshaw/it-reader/compare/v5.0.0...v5.0.1) (2022-03-08)
 
 
