@@ -1,3 +1,10 @@
+## [6.0.1](https://github.com/alanshaw/it-reader/compare/v6.0.0...v6.0.1) (2022-07-28)
+
+
+### Bug Fixes
+
+* accept uint8arraylists as input ([#35](https://github.com/alanshaw/it-reader/issues/35)) ([f18a40c](https://github.com/alanshaw/it-reader/commit/f18a40ccc86c2071130ad8ed47861b6e49a909a1))
+
 ## [6.0.0](https://github.com/alanshaw/it-reader/compare/v5.0.2...v6.0.0) (2022-07-28)
 
 
