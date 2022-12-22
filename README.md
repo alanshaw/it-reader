@@ -1,19 +1,21 @@
 # it-reader <!-- omit in toc -->
 
 [![codecov](https://img.shields.io/codecov/c/github/alanshaw/it-reader.svg?style=flat-square)](https://codecov.io/gh/alanshaw/it-reader)
-[![CI](https://img.shields.io/github/workflow/status/alanshaw/it-reader/test%20&%20maybe%20release/master?style=flat-square)](https://github.com/alanshaw/it-reader/actions/workflows/js-test-and-release.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/alanshaw/it-reader/js-test-and-release.yml?branch=master\&style=flat-square)](https://github.com/alanshaw/it-reader/actions/workflows/js-test-and-release.yml?query=branch%3Amaster)
 
 > Read an exact number of bytes from a binary (async) iterable
 
 ## Table of contents <!-- omit in toc -->
 
 - [Install](#install)
+  - [Browser `<script>` tag](#browser-script-tag)
 - [Usage](#usage)
 - [API](#api)
   - [`reader(source)`](#readersource)
     - [Parameters](#parameters)
     - [Returns](#returns)
 - [Contribute](#contribute)
+- [API Docs](#api-docs)
 - [License](#license)
 - [Contribution](#contribution)
 
@@ -21,6 +23,14 @@
 
 ```console
 $ npm i it-reader
+```
+
+### Browser `<script>` tag
+
+Loading this module through a script tag will make it's exports available as `ItReader` in the global namespace.
+
+```html
+<script src="https://unpkg.com/it-reader/dist/index.min.js"></script>
 ```
 
 ## Usage
@@ -72,6 +82,10 @@ If the number of bytes to read exceeds the number of bytes available in the sour
 ## Contribute
 
 Feel free to dive in! [Open an issue](https://github.com/alanshaw/it-reader/issues/new) or submit PRs.
+
+## API Docs
+
+- <https://alanshaw.github.io/it-reader>
 
 ## License
 
