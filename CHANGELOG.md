@@ -1,3 +1,10 @@
+## [6.0.2](https://github.com/alanshaw/it-reader/compare/v6.0.1...v6.0.2) (2022-12-22)
+
+
+### Documentation
+
+* generate typedocs for it-reader ([#42](https://github.com/alanshaw/it-reader/issues/42)) ([4824b46](https://github.com/alanshaw/it-reader/commit/4824b469b76fba594cf720c28407112e8fca77f6))
+
 ## [6.0.1](https://github.com/alanshaw/it-reader/compare/v6.0.0...v6.0.1) (2022-07-28)
 
 
