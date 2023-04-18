@@ -1,3 +1,10 @@
+## [6.0.3](https://github.com/alanshaw/it-reader/compare/v6.0.2...v6.0.3) (2023-04-18)
+
+
+### Dependencies
+
+* bump it-stream-types from 1.0.5 to 2.0.1 ([#56](https://github.com/alanshaw/it-reader/issues/56)) ([9c1531f](https://github.com/alanshaw/it-reader/commit/9c1531ff767339d0e0bf389bc22de57a3fea14b0))
+
 ## [6.0.2](https://github.com/alanshaw/it-reader/compare/v6.0.1...v6.0.2) (2022-12-22)
 
 
