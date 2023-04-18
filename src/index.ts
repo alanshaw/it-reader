@@ -31,7 +31,7 @@ export interface Reader extends AsyncGenerator<Uint8ArrayList, void, any> {
  * }
  * ```
  */
-export function reader (source: Source<Uint8Array | Uint8ArrayList>) {
+export function reader (source: Source<Uint8Array | Uint8ArrayList>): Reader {
   const reader: Reader = (async function * (): AsyncGenerator<Uint8ArrayList, void, any> {
     // @ts-expect-error first yield in stream is ignored
     let bytes: number | undefined = yield // Allows us to receive 8 when reader.next(8) is called
