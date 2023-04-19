@@ -1,3 +1,10 @@
+## [6.0.4](https://github.com/alanshaw/it-reader/compare/v6.0.3...v6.0.4) (2023-04-19)
+
+
+### Dependencies
+
+* **dev:** bump aegir from 37.12.1 to 38.1.8 ([#55](https://github.com/alanshaw/it-reader/issues/55)) ([07b6b6f](https://github.com/alanshaw/it-reader/commit/07b6b6ffe903995c13a75a4a30d53c0b5122b447))
+
 ## [6.0.3](https://github.com/alanshaw/it-reader/compare/v6.0.2...v6.0.3) (2023-04-18)
 
 
