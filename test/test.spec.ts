@@ -1,7 +1,7 @@
 import { expect } from 'aegir/chai'
 import { Uint8ArrayList } from 'uint8arraylist'
-import { reader } from '../src/index.js'
-import randomBytes from 'iso-random-stream/src/random.js'
+import { reader } from '../src/index.ts'
+import { randomBytes } from 'iso-random-stream'
 
 describe('it-reader', () => {
   it('should read from source with too big first chunk', async () => {
