@@ -5,7 +5,7 @@ import type { Source } from 'it-stream-types'
  * A specialized `AsyncGenerator` that lets you pass a number to the `.next` method which
  * will attempt to return only that many bytes.
  */
-export interface Reader<T extends ArrayBufferLike> extends AsyncGenerator<Uint8ArrayList<T>, void, any> {
+export interface Reader<T extends ArrayBufferLike = ArrayBufferLike> extends AsyncGenerator<Uint8ArrayList<T>, void, any> {
   next(...args: [] | [number | undefined]): Promise<IteratorResult<Uint8ArrayList<T>, void>>
 }
 
