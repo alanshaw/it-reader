@@ -1,3 +1,14 @@
+## [6.0.5](https://github.com/alanshaw/it-reader/compare/v6.0.4...v6.0.5) (2026-05-07)
+
+### Trivial Changes
+
+* add or force update .github/workflows/js-test-and-release.yml ([#68](https://github.com/alanshaw/it-reader/issues/68)) ([d1ddd47](https://github.com/alanshaw/it-reader/commit/d1ddd4790ff112e14730e8b600027548e2dadf38))
+* delete templates [skip ci] ([#67](https://github.com/alanshaw/it-reader/issues/67)) ([bb15bce](https://github.com/alanshaw/it-reader/commit/bb15bce6807c0b5e5996ce361be215aed47bfbc5))
+
+### Dependencies
+
+* **dev:** bump aegir from 38.1.8 to 40.0.0 ([#66](https://github.com/alanshaw/it-reader/issues/66)) ([91288cd](https://github.com/alanshaw/it-reader/commit/91288cdaa9f1a5664d002a106cd549fcb95d3ae1))
+
 ## [6.0.4](https://github.com/alanshaw/it-reader/compare/v6.0.3...v6.0.4) (2023-04-19)
 
 
