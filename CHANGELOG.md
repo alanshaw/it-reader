@@ -1,3 +1,13 @@
+## [7.0.0](https://github.com/alanshaw/it-reader/compare/v6.0.5...v7.0.0) (2026-05-07)
+
+### ⚠ BREAKING CHANGES
+
+* the returned `Uint8ArrayList` have a generic type that reflects the internal buffer type
+
+### Bug Fixes
+
+* Uint8Arrays are generic ([#70](https://github.com/alanshaw/it-reader/issues/70)) ([ec9e535](https://github.com/alanshaw/it-reader/commit/ec9e535bee16d5386b7c7ad98582759c7cb0286e))
+
 ## [6.0.5](https://github.com/alanshaw/it-reader/compare/v6.0.4...v6.0.5) (2026-05-07)
 
 ### Trivial Changes
