@@ -151,14 +151,10 @@
   },
   "dependencies": {
     "it-stream-types": "^2.0.1",
-    "uint8arraylist": "^2.0.0"
+    "uint8arraylist": "^3.0.1"
   },
   "devDependencies": {
     "aegir": "^48.0.1",
     "iso-random-stream": "^2.0.2"
-  },
-  "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=7.0.0"
   }
 }

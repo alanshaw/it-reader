@@ -5,8 +5,8 @@ import type { Source } from 'it-stream-types'
  * A specialized `AsyncGenerator` that lets you pass a number to the `.next` method which
  * will attempt to return only that many bytes.
  */
-export interface Reader extends AsyncGenerator<Uint8ArrayList, void, any> {
-  next(...args: [] | [number | undefined]): Promise<IteratorResult<Uint8ArrayList, void>>
+export interface Reader<T extends ArrayBufferLike = ArrayBufferLike> extends AsyncGenerator<Uint8ArrayList<T>, void, any> {
+  next(...args: [] | [number | undefined]): Promise<IteratorResult<Uint8ArrayList<T>, void>>
 }
 
 /**
@@ -31,17 +31,17 @@ export interface Reader extends AsyncGenerator<Uint8ArrayList, void, any> {
  * }
  * ```
  */
-export function reader (source: Source<Uint8Array | Uint8ArrayList>): Reader {
-  const reader: Reader = (async function * (): AsyncGenerator<Uint8ArrayList, void, any> {
+export function reader <T extends ArrayBufferLike> (source: Source<Uint8Array<T> | Uint8ArrayList<T>>): Reader<T> {
+  const reader: Reader<T> = (async function * (): AsyncGenerator<Uint8ArrayList<T>, void, any> {
     // @ts-expect-error first yield in stream is ignored
     let bytes: number | undefined = yield // Allows us to receive 8 when reader.next(8) is called
-    let bl = new Uint8ArrayList()
+    let bl = new Uint8ArrayList<T>()
 
     for await (const chunk of source) {
       if (bytes == null) {
         bl.append(chunk)
         bytes = yield bl
-        bl = new Uint8ArrayList()
+        bl = new Uint8ArrayList<T>()
         continue
       }
 
