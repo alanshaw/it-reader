@@ -6,7 +6,7 @@ import type { Source } from 'it-stream-types'
  * will attempt to return only that many bytes.
  */
 export interface Reader extends AsyncGenerator<Uint8ArrayList, void, any> {
-  next: (...args: [] | [number | undefined]) => Promise<IteratorResult<Uint8ArrayList, void>>
+  next(...args: [] | [number | undefined]): Promise<IteratorResult<Uint8ArrayList, void>>
 }
 
 /**
